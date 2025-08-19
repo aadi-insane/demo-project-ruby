@@ -30,6 +30,7 @@ class Bookings
     data = JSON.parse(File.read(file_path))
     data.map do |bookings_data|
       Bookings.new(
+        bookings_data['id'],
         bookings_data['c_name'],
         bookings_data['movie'],
         bookings_data['audi'],
@@ -43,7 +44,7 @@ class Bookings
 
   def self.show_details(tickets)
     tickets.each_with_index do |tickets, index|
-      puts "#{index + 1}. Name: #{tickets.c_name} \n   Movie: #{tickets.movie} \n   Audi: #{tickets.audi} \n   Price: #{tickets.price} \n   Shows: #{tickets.show}" 
+      puts "#{index + 1}. Booking ID: #{tickets.id} \n   Name: #{tickets.c_name} \n   Movie: #{tickets.movie} \n   Audi: #{tickets.audi} \n   Price: #{tickets.price} \n   Shows: #{tickets.show}" 
      
       puts "--------------------------------------------------------"
     end
@@ -130,7 +131,7 @@ class Bookings
     puts "Selected Movie: #{movie.name}"
     puts
 
-    audi = movie.audi.to_s
+    audi = movie.audi.to_s.to_i
     puts "Audi: #{audi}"
     puts
 
@@ -178,7 +179,7 @@ class Bookings
     puts
 
     new_booking = {
-      # "id" => generate_id,
+      "id" => Bookings.generate_id,
       "c_name" => c_name,
       "movie" => movie.name,
       "audi" => audi,
@@ -197,9 +198,9 @@ class Bookings
     puts 
   end
 
-  def generate_id
-    # "BK" + rand(1000..9999).to_s
-    puts "BK" + rand(1000..9999).to_s
+  def self.generate_id
+    "BK" + rand(1000..9999).to_s
+    # puts "BK" + rand(1000..9999).to_s
   end
 
 end
@@ -214,4 +215,6 @@ end
 # puts tickets
 # bookings.show_details(tickets)
 
-# Bookings.book_ticket("../data/bookings.json", "../data/movies.json")
+Bookings.book_ticket("../data/bookings.json", "../data/movies.json")
+
+# Bookings.generate_id

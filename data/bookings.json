@@ -1,5 +1,6 @@
 [
   {
+    "id": "BK78146",
     "c_name": "Aditya Aerpule",
     "movie": "Interstellar",
     "audi": 1,
@@ -8,6 +9,7 @@
     "seats": 2
   },
   {
+    "id": "BK56146",
     "c_name": "Udit Aerpule",
     "movie": "Shutter Island",
     "audi": 3,
@@ -16,6 +18,7 @@
     "seats": 1
   },
   {
+    "id": "BK78356",
     "c_name": "Ram Chandra",
     "movie": "Ford vs Ferrari",
     "audi": 4,
@@ -24,14 +27,21 @@
     "seats": 3
   },
   {
-    "c_name": "Adi",
-    "movie": "Inception",
-    "audi": "3",
-    "show": {
-      "shift": "12:00 PM to 03:00 PM",
-      "available_seats": 15
-    },
-    "price": 280,
+    "id": "BK3423",
+    "c_name": "dfhhuh",
+    "movie": "The Shawshank Redemption",
+    "audi": "2",
+    "show": "06:00 PM to 09:00 PM",
+    "price": 220,
     "seats": 2
+  },
+  {
+    "id": "BK1716",
+    "c_name": "nqwejcbi",
+    "movie": "The Revenant",
+    "audi": 2,
+    "show": "12:00 PM to 03:00 PM",
+    "price": 220,
+    "seats": 4
   }
 ]
