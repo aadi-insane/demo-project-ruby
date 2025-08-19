@@ -119,7 +119,7 @@ class Bookings
       print "Select Movie (Enter number 1-#{movies_list.length}): "
       movie_input = gets.chomp.strip
       
-      if movie_input =~ /^\d+$/ && movie_input.to_i.between?(1, movies_list.length)
+      if movie_input.to_i.to_s == movie_input && (1..movies_list.length).include?(movie_input.to_i)
         movie = movies_list[movie_input.to_i - 1]
         break
       else
@@ -130,12 +130,10 @@ class Bookings
     puts "Selected Movie: #{movie.name}"
     puts
 
-    # Audi is automatically set based on selected movie
     audi = movie.audi.to_s
     puts "Audi: #{audi}"
     puts
 
-    # Display available shows with numbers for selection
     available_shifts = movie.available_shows
 
     show = nil
@@ -148,7 +146,10 @@ class Bookings
       show_input = gets.chomp.strip
       
       if show_input.to_i.to_s == show_input && show_input.to_i.between?(1, available_shifts.length)
-        show = available_shifts[show_input.to_i - 1]  # Note: available_shifts is an array of strings here
+        
+        selected_show_hash = available_shifts[show_input.to_i - 1] 
+
+        show = selected_show_hash['shift'] 
         break
       else
         puts "Invalid selection. Please enter a number between 1 and #{available_shifts.length}."
@@ -156,15 +157,13 @@ class Bookings
       end
 
     end
-    # puts "Selected Show Time: #{show}"
+    puts "Selected Show Time: #{show}"
     puts
 
-    # Price validation (should match movie price)
     price = movie.price
     puts "Price for this booking: #{price}"
     puts
 
-    # Seats validation loop
     seats = nil
     loop do
       print "Enter number of Seats: "
@@ -199,7 +198,8 @@ class Bookings
   end
 
   def generate_id
-    "BK" + rand(1000..9999).to_s
+    # "BK" + rand(1000..9999).to_s
+    puts "BK" + rand(1000..9999).to_s
   end
 
 end
@@ -214,4 +214,4 @@ end
 # puts tickets
 # bookings.show_details(tickets)
 
-Bookings.book_ticket("../data/bookings.json", "../data/movies.json")
+# Bookings.book_ticket("../data/bookings.json", "../data/movies.json")
