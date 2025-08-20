@@ -1,47 +1,56 @@
 [
   {
-    "id": "BK78146",
+    "id": "BK8546",
     "c_name": "Aditya Aerpule",
     "movie": "Interstellar",
     "audi": 1,
-    "price": 250,
     "show": "09:00 AM to 12:00 PM",
-    "seats": 2
-  },
-  {
-    "id": "BK56146",
-    "c_name": "Udit Aerpule",
-    "movie": "Shutter Island",
-    "audi": 3,
-    "price": 280,
-    "show": "03:00 PM to 06:00 PM",
+    "price": 250,
     "seats": 1
   },
   {
-    "id": "BK78356",
+    "id": "BK7185",
     "c_name": "Ram Chandra",
     "movie": "Ford vs Ferrari",
     "audi": 4,
-    "price": 250,
     "show": "09:00 PM to 12:00 AM",
-    "seats": 3
-  },
-  {
-    "id": "BK3423",
-    "c_name": "dfhhuh",
-    "movie": "The Shawshank Redemption",
-    "audi": "2",
-    "show": "06:00 PM to 09:00 PM",
-    "price": 220,
+    "price": 500,
     "seats": 2
   },
   {
-    "id": "BK1716",
-    "c_name": "nqwejcbi",
+    "id": "BK9706",
+    "c_name": "Krishna",
+    "movie": "Shutter Island",
+    "audi": 3,
+    "show": "09:00 AM to 12:00 PM",
+    "price": 560,
+    "seats": 2
+  },
+  {
+    "id": "BK4415",
+    "c_name": "Shyam",
+    "movie": "The Shawshank Redemption",
+    "audi": 2,
+    "show": "06:00 PM to 09:00 PM",
+    "price": 220,
+    "seats": 1
+  },
+  {
+    "id": "BK9990",
+    "c_name": "ram chaNdRa",
     "movie": "The Revenant",
     "audi": 2,
     "show": "12:00 PM to 03:00 PM",
-    "price": 220,
-    "seats": 4
+    "price": 440,
+    "seats": 2
+  },
+  {
+    "id": "BK6873",
+    "c_name": "Ranjit",
+    "movie": "Shutter Island",
+    "audi": 3,
+    "show": "09:00 AM to 12:00 PM",
+    "price": 280,
+    "seats": 1
   }
 ]

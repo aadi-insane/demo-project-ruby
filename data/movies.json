@@ -1,115 +1,115 @@
 [
-    {
-        "name": "Interstellar",
-        "audi": 1,
-        "price": 250,
-        "available_shows": [
-            {
-                "shift": "09:00 AM to 12:00 PM",
-                "available_seats": 10
-            },
-            {
-                "shift": "12:00 PM to 03:00 PM",
-                "available_seats": 12
-            },
-            {
-                "shift": "03:00 PM to 06:00 PM",
-                "available_seats": 15
-            },
-            {
-                "shift": "06:00 PM to 09:00 PM",
-                "available_seats": 10
-            }
-        ]
-    },
-    {
-        "name": "The Shawshank Redemption",
-        "audi": 2,
-        "price": 220,
-        "available_shows": [
-            {
-                "shift": "09:00 AM to 12:00 PM",
-                "available_seats": 10
-            },
-            {
-                "shift": "06:00 PM to 09:00 PM",
-                "available_seats": 8
-            }
-        ]
-    },
-    {
-        "name": "The Revenant",
-        "audi": 2,
-        "price": 220,
-        "available_shows": [
-            {
-                "shift": "12:00 PM to 03:00 PM",
-                "available_seats": 12
-            },
-            {
-                "shift": "03:00 PM to 06:00 PM",
-                "available_seats": 10
-            }
-        ]
-    },
-    {
-        "name": "Inception",
-        "audi": 3,
-        "price": 280,
-        "available_shows": [
-            {
-                "shift": "12:00 PM to 03:00 PM",
-                "available_seats": 15
-            },
-            {
-                "shift": "06:00 PM to 09:00 PM",
-                "available_seats": 17
-            }
-        ]
-    },
-    {
-        "name": "Shutter Island",
-        "audi": 3,
-        "price": 280,
-        "available_shows": [
-            {
-                "shift": "09:00 AM to 12:00 PM",
-                "available_seats": 9
-            },
-            {
-                "shift": "03:00 PM to 06:00 PM",
-                "available_seats": 8
-            }
-        ]
-    },
-    {
-        "name": "Tenet",
-        "audi": 4,
-        "price": 250,
-        "available_shows": [
-            {
-                "shift": "09:00 AM to 12:00 PM",
-                "available_seats": 12
-            },
-            {
-                "shift": "12:00 PM to 03:00 PM",
-                "available_seats": 10
-            }
-        ]
-    },
-    {
-        "name": "Ford vs Ferrari",
-        "audi": 4,
-        "price": 250,
-        "available_shows": [
-            {
-                "shift": "12:00 PM to 03:00 PM",
-                "available_seats": 13
-            },
-            {
-                "shift": "09:00 PM to 12:00 AM",
-                "available_seats": 10
-            }
-        ]
-    }
+  {
+    "name": "Interstellar",
+    "audi": 1,
+    "price": 250,
+    "available_shows": [
+      {
+        "shift": "09:00 AM to 12:00 PM",
+        "available_seats": 10
+      },
+      {
+        "shift": "12:00 PM to 03:00 PM",
+        "available_seats": 10
+      },
+      {
+        "shift": "03:00 PM to 06:00 PM",
+        "available_seats": 10
+      },
+      {
+        "shift": "06:00 PM to 09:00 PM",
+        "available_seats": 11
+      }
+    ]
+  },
+  {
+    "name": "The Shawshank Redemption",
+    "audi": 2,
+    "price": 220,
+    "available_shows": [
+      {
+        "shift": "09:00 AM to 12:00 PM",
+        "available_seats": 10
+      },
+      {
+        "shift": "06:00 PM to 09:00 PM",
+        "available_seats": 6
+      }
+    ]
+  },
+  {
+    "name": "The Revenant",
+    "audi": 2,
+    "price": 220,
+    "available_shows": [
+      {
+        "shift": "12:00 PM to 03:00 PM",
+        "available_seats": 10
+      },
+      {
+        "shift": "03:00 PM to 06:00 PM",
+        "available_seats": 9
+      }
+    ]
+  },
+  {
+    "name": "Inception",
+    "audi": 3,
+    "price": 280,
+    "available_shows": [
+      {
+        "shift": "12:00 PM to 03:00 PM",
+        "available_seats": 15
+      },
+      {
+        "shift": "06:00 PM to 09:00 PM",
+        "available_seats": 17
+      }
+    ]
+  },
+  {
+    "name": "Shutter Island",
+    "audi": 3,
+    "price": 280,
+    "available_shows": [
+      {
+        "shift": "09:00 AM to 12:00 PM",
+        "available_seats": 4
+      },
+      {
+        "shift": "03:00 PM to 06:00 PM",
+        "available_seats": 8
+      }
+    ]
+  },
+  {
+    "name": "Tenet",
+    "audi": 4,
+    "price": 250,
+    "available_shows": [
+      {
+        "shift": "09:00 AM to 12:00 PM",
+        "available_seats": 12
+      },
+      {
+        "shift": "12:00 PM to 03:00 PM",
+        "available_seats": 10
+      }
+    ]
+  },
+  {
+    "name": "Ford vs Ferrari",
+    "audi": 4,
+    "price": 250,
+    "available_shows": [
+      {
+        "shift": "12:00 PM to 03:00 PM",
+        "available_seats": 13
+      },
+      {
+        "shift": "09:00 PM to 12:00 AM",
+        "available_seats": 8
+      }
+    ]
+  }
 ]

@@ -246,7 +246,7 @@ class Bookings
     puts
     result_array = []
     booking_data.each_with_index do |hash, index|
-      if hash['c_name'].downcase == search_name
+      if hash['c_name'].downcase.split.first == search_name
 
         result_array.push(hash)
         # puts result_array
