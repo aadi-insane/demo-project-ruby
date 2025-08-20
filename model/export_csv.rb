@@ -18,7 +18,7 @@ class ExportBookings
     CSV.open(export_file, "w") do |file|
       file << headers
       bookings_data.each do |item|
-        file << item.values_at(*headers) # Use values_at here
+        file << item.values_at(*headers)
       end
     end
     puts "Bookings exported to '/data/output.csv'"

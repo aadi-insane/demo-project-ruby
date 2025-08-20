@@ -70,5 +70,14 @@
     "show": "12:00 PM to 03:00 PM",
     "price": 1400,
     "seats": 5
+  },
+  {
+    "id": "BK1317",
+    "c_name": "Kajal",
+    "movie": "Interstellar",
+    "audi": 1,
+    "show": "03:00 PM to 06:00 PM",
+    "price": 250,
+    "seats": 1
   }
 ]

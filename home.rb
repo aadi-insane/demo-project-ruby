@@ -62,7 +62,7 @@ end
 puts "==================== Welcome to Cinemax Booking System ===================="
 while true
   puts
-  puts "                    ____________________________________"
+  puts "                    _____________________________________"
   puts "                    |                                   |"
   puts "                    |          SELECT YOUR MOVE         |"
   puts "                    | press '1' --- For Available shows |"
