@@ -1,11 +1,11 @@
 require 'json'
-require_relative "movies"
+require_relative 'movies'
 
 class Bookings
   attr_accessor :id, :c_name, :movie, :audi, :show, :price, :seats
 
-  def initialize(c_name, movie, audi, show, price, seats)
-    @id = generate_id
+  def initialize(id, c_name, movie, audi, show, price, seats)
+    @id = id
     @c_name = c_name
     @movie = movie
     @audi = audi
@@ -44,7 +44,7 @@ class Bookings
 
   def self.show_details(tickets)
     tickets.each_with_index do |tickets, index|
-      puts "#{index + 1}. Booking ID: #{tickets.id} \n   Name: #{tickets.c_name} \n   Movie: #{tickets.movie} \n   Audi: #{tickets.audi} \n   Price: #{tickets.price} \n   Shows: #{tickets.show}" 
+      puts "#{index + 1}. Booking ID: #{tickets.id} \n   Name:  #{tickets.c_name} \n   Movie: #{tickets.movie} \n   Audi:  #{tickets.audi} \n   Price: #{tickets.price} \n   Shows: #{tickets.show}" 
      
       puts "--------------------------------------------------------"
     end
@@ -138,10 +138,13 @@ class Bookings
     available_shifts = movie.available_shows
 
     show = nil
+    $avail_seats = nil
+
     loop do
       puts "Available Show Times:"
       available_shifts.each_with_index do |shift_info, index|
-        puts "#{index + 1}. #{shift_info['shift']} (Available Seats: #{shift_info['available_seats']})"
+        # puts "#{index + 1}. #{shift_info['shift']} (Available Seats: #{shift_info['available_seats']})"
+        puts "#{index + 1}. #{shift_info['shift']}"
       end
       print "Select Show Time (Enter number 1-#{available_shifts.length}): "
       show_input = gets.chomp.strip
@@ -151,7 +154,13 @@ class Bookings
         selected_show_hash = available_shifts[show_input.to_i - 1] 
 
         show = selected_show_hash['shift'] 
-        break
+        $avail_seats = selected_show_hash['available_seats']
+        if $avail_seats < 1
+          puts "\nSorry, #{$avail_seats} seats available for this show! Try other Shows."
+          puts
+          next
+        end
+        break   
       else
         puts "Invalid selection. Please enter a number between 1 and #{available_shifts.length}."
         puts
@@ -167,24 +176,44 @@ class Bookings
 
     seats = nil
     loop do
+      puts "Available seats: #{$avail_seats}"
       print "Enter number of Seats: "
       seats_input = gets.chomp.strip
-      if seats_input.to_i.to_s == seats_input && seats_input.to_i > 0
+      if seats_input.to_i.to_s == seats_input && seats_input.to_i > 0 && seats_input.to_i <= $avail_seats
         seats = seats_input.to_i
+        $avail_seats -= seats
+        
+        movies_data.each do |m|
+          # puts "Debug: available_shifts variable content = #{available_shifts.inspect}"
+          shifts_array = m["available_shows"] 
+          # avail_hash = m[available_shifts]
+          # puts "Debug: avail_hash (after assignment) = #{avail_hash.inspect}"
+          # if m["name"] == movie.name && avail_hash['shift'] == show
+          #   avail_hash['available_seats'] = $avail_seats            
+          # end
+          
+          shifts_array.each do |shift_entry|
+            if m["name"] == movie.name && shift_entry['shift'] == show
+              shift_entry['available_seats'] = $avail_seats            
+            end
+          end
+        end
+
         break
       else
-        puts "Invalid seats number. Please enter a positive integer."
+        puts "Invalid seats number. Please enter according to available seats."
       end
     end
     puts
+    id = Bookings.generate_id
 
     new_booking = {
-      "id" => Bookings.generate_id,
+      "id" => id,
       "c_name" => c_name,
       "movie" => movie.name,
       "audi" => audi,
       "show" => show,
-      "price" => price,
+      "price" => price*seats,
       "seats" => seats
     }
 
@@ -194,13 +223,50 @@ class Bookings
       file.write(JSON.pretty_generate(booking_data))
     end
 
+    File.open(movies_file, "w") do |file|
+      file.write(JSON.pretty_generate(movies_data))
+    end
+
     puts "Booking successfully saved!"
-    puts 
+    puts "   _____________________ TICKET _____________________\n   |\n   | Bookings-ID: #{id}\n   | Name: #{c_name}\n   | Movie: #{movie.name}\n   | Audi: #{audi}   Seats: #{seats}\n   | Show: #{show}\n   | Total Price: #{price*seats}\n"
+    puts "   |_________________________________________________"
   end
 
   def self.generate_id
     "BK" + rand(1000..9999).to_s
     # puts "BK" + rand(1000..9999).to_s
+  end
+
+  def self.search_bookings(booking_file)
+
+    booking_data = JSON.parse(File.read(booking_file))
+
+    print "Enter Customer's name to search: "    
+    search_name = gets.chomp.strip.downcase
+    puts
+    result_array = []
+    booking_data.each_with_index do |hash, index|
+      if hash['c_name'].downcase == search_name
+
+        result_array.push(hash)
+        # puts result_array
+        # puts result_array.class
+
+        # puts "#{index + 1}. Booking ID: #{hash['id']} \n   Name: #{hash['c_name']} \n   Movie: #{hash['movie']} \n   Audi: #{hash['audi']} \n   Price: #{hash['price']} \n   Shows: #{hash['show']}" 
+      
+        # puts "--------------------------------------------------------"
+      end
+    end
+    if !result_array.empty?
+      result_array.each_with_index do |hash, index|
+
+        puts "#{index + 1}. Booking ID: #{hash['id']} \n   Name:  #{hash['c_name']} \n   Movie: #{hash['movie']} \n   Audi:  #{hash['audi']} \n   Price: #{hash['price']} \n   Shows: #{hash['show']}" 
+      
+        puts "--------------------------------------------------------"         
+      end
+    else
+      puts "No match found!"
+    end
   end
 
 end
@@ -215,6 +281,8 @@ end
 # puts tickets
 # bookings.show_details(tickets)
 
-Bookings.book_ticket("../data/bookings.json", "../data/movies.json")
+# Bookings.book_ticket("../data/bookings.json", "../data/movies.json")
 
 # Bookings.generate_id
+
+# Bookings.search_bookings("../data/bookings.json")
