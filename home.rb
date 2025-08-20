@@ -4,6 +4,7 @@ require_relative 'model/movies.rb'
 require_relative 'model/shows.rb'
 require_relative 'model/bookings.rb'
 require_relative 'model/cancelation.rb'
+require_relative 'model/export_csv'
 
 def available_shows
   shows = Shows.new
@@ -52,20 +53,26 @@ def search_bookings
   Bookings.search_bookings(booking_file)
 end
 
+def export_book
+  booking_file = "./data/bookings.json"
+  ExportBookings.export(booking_file)
+end
+
 
 puts "==================== Welcome to Cinemax Booking System ===================="
 while true
   puts
   puts "                    ____________________________________"
-  puts "                    |                                  |"
-  puts "                    |        SELECT YOUR MOVE          |"
-  puts "                    | For available shows----press '1' |"
-  puts "                    | For New Booking--------press '2' |"
-  puts "                    | For Cancelation--------press '3' |"
-  puts "                    | For Booking List-------press '4' |"
-  puts "                    | For Search Booking-----press '5' |"
-  puts "                    | For Exit---------------press '6' |"
-  puts "                    |__________________________________|"
+  puts "                    |                                   |"
+  puts "                    |          SELECT YOUR MOVE         |"
+  puts "                    | press '1' --- For Available shows |"
+  puts "                    | press '2' --- To Book Ticket      |"
+  puts "                    | press '3' --- To Cancel Ticket    |"
+  puts "                    | press '4' --- For Booking List    |"
+  puts "                    | press '5' --- To Search Booking   |"
+  puts "                    | press '6' --- To Export Bookings  |"
+  puts "                    | press '7' --- To Exit             |"
+  puts "                    |___________________________________|"
   puts
   print "Enter Your choice: "
 
@@ -83,6 +90,8 @@ while true
   when 5
     search_bookings
   when 6
+    export_book
+  when 7
     puts "Bye-Bye, Thank You! for using Cinemax Booking System."
     return
   else

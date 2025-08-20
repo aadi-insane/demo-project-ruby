@@ -230,6 +230,16 @@ class Bookings
     puts "Booking successfully saved!"
     puts "   _____________________ TICKET _____________________\n   |\n   | Bookings-ID: #{id}\n   | Name: #{c_name}\n   | Movie: #{movie.name}\n   | Audi: #{audi}   Seats: #{seats}\n   | Show: #{show}\n   | Total Price: #{price*seats}\n"
     puts "   |_________________________________________________"
+    # puts "   _____________________ TICKET ____________________"
+    # puts "   |                                                \\"
+    # puts "   | Booking ID: #{id}                            /"
+    # puts "   | Name: #{c_name}                           \\"
+    # puts "   | Movie: #{movie.name}                 /"
+    # puts "   | Audi: #{audi}                                   \\"
+    # puts "   | Seats: #{seats}                                  /"
+    # puts "   | Show: #{show}                        \\"
+    # puts "   | Total Price: #{price*seats}                         /"
+    # puts "   |_________________________________________________\\"
   end
 
   def self.generate_id

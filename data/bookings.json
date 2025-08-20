@@ -45,12 +45,30 @@
     "seats": 2
   },
   {
-    "id": "BK6873",
-    "c_name": "Ranjit",
+    "id": "BK1830",
+    "c_name": "Raj Shekhar",
+    "movie": "The Shawshank Redemption",
+    "audi": 2,
+    "show": "06:00 PM to 09:00 PM",
+    "price": 440,
+    "seats": 2
+  },
+  {
+    "id": "BK8067",
+    "c_name": "Chandra Vardhan",
     "movie": "Shutter Island",
     "audi": 3,
     "show": "09:00 AM to 12:00 PM",
     "price": 280,
     "seats": 1
+  },
+  {
+    "id": "BK4725",
+    "c_name": "Raja Ram",
+    "movie": "Inception",
+    "audi": 3,
+    "show": "12:00 PM to 03:00 PM",
+    "price": 1400,
+    "seats": 5
   }
 ]
