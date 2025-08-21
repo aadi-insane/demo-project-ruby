@@ -33,7 +33,7 @@
       },
       {
         "shift": "06:00 PM to 09:00 PM",
-        "available_seats": 4
+        "available_seats": 3
       }
     ]
   },
@@ -89,7 +89,7 @@
     "available_shows": [
       {
         "shift": "09:00 AM to 12:00 PM",
-        "available_seats": 12
+        "available_seats": 10
       },
       {
         "shift": "12:00 PM to 03:00 PM",

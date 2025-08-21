@@ -44,7 +44,7 @@ class Bookings
 
   def self.show_details(tickets)
     tickets.each_with_index do |tickets, index|
-      puts "#{index + 1}. Booking ID: #{tickets.id} \n   Name:  #{tickets.c_name} \n   Movie: #{tickets.movie} \n   Audi:  #{tickets.audi} \n   Price: #{tickets.price} \n   Shows: #{tickets.show}" 
+      puts "#{index + 1}. Booking ID: #{tickets.id} \n   Name:  #{tickets.c_name} \n   Movie: #{tickets.movie} \n   Audi:  #{tickets.audi} \n   Seats: #{tickets.seats}\n   Price: #{tickets.price} \n   Shows: #{tickets.show}" 
      
       puts "--------------------------------------------------------"
     end
@@ -270,7 +270,7 @@ class Bookings
     if !result_array.empty?
       result_array.each_with_index do |hash, index|
 
-        puts "#{index + 1}. Booking ID: #{hash['id']} \n   Name:  #{hash['c_name']} \n   Movie: #{hash['movie']} \n   Audi:  #{hash['audi']} \n   Price: #{hash['price']} \n   Shows: #{hash['show']}" 
+        puts "#{index + 1}. Booking ID: #{hash['id']} \n   Name:  #{hash['c_name']} \n   Movie: #{hash['movie']} \n   Audi:  #{hash['audi']} \n   Seats: #{hash['seats']} \n   Price: #{hash['price']} \n   Shows: #{hash['show']}" 
       
         puts "--------------------------------------------------------"         
       end

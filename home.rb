@@ -6,10 +6,13 @@ require_relative 'model/bookings.rb'
 require_relative 'model/cancelation.rb'
 require_relative 'model/export_csv'
 
+$movies_file = "./data/movies.json"
+$booking_file = "./data/bookings.json"
+
 def available_shows
   shows = Shows.new
-  movies_file = "./data/movies.json"
-  movies = shows.load_movies(movies_file)
+  # movies_file = "./data/movies.json"
+  movies = shows.load_movies($movies_file)
 
   shows.show_details(movies)
 end
@@ -18,26 +21,26 @@ def new_booking
   # puts "New Booking"
   
   # shows = Shows.new
-  movies_file = "./data/movies.json"
+  # movies_file = "./data/movies.json"
   # movies = shows.load_movies(movies_file)
-  booking_file = "./data/bookings.json"
+  # booking_file = "./data/bookings.json"
   # bookings = Bookings.load_bookings(booking_file)
 
-  Bookings.book_ticket(booking_file, movies_file)
+  Bookings.book_ticket($booking_file, $movies_file)
 end
 
 def cancel
   # puts "Cancelation"
-  movies_file = "./data/movies.json"
-  booking_file = "./data/bookings.json"
-  Cancelation.canel_ticket(booking_file, movies_file)
+  # movies_file = "./data/movies.json"
+  # booking_file = "./data/bookings.json"
+  Cancelation.canel_ticket($booking_file, $movies_file)
 end
 
 def show_bookings
   # puts "Show Bookings"
   
-  booking_file = "./data/bookings.json"
-  tickets = Bookings.load_bookings(booking_file)
+  # booking_file = "./data/bookings.json"
+  tickets = Bookings.load_bookings($booking_file)
 
   if tickets && !tickets.empty?
     Bookings.show_details(tickets)
@@ -49,13 +52,13 @@ end
 
 def search_bookings
   # puts "Searching in bookings...."
-  booking_file = "./data/bookings.json"
-  Bookings.search_bookings(booking_file)
+  # booking_file = "./data/bookings.json"
+  Bookings.search_bookings($booking_file)
 end
 
 def export_book
-  booking_file = "./data/bookings.json"
-  ExportBookings.export(booking_file)
+  # booking_file = "./data/bookings.json"
+  ExportBookings.export($booking_file)
 end
 
 

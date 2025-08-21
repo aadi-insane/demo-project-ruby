@@ -79,5 +79,23 @@
     "show": "03:00 PM to 06:00 PM",
     "price": 250,
     "seats": 1
+  },
+  {
+    "id": "BK6289",
+    "c_name": "ratan",
+    "movie": "Tenet",
+    "audi": 4,
+    "show": "09:00 AM to 12:00 PM",
+    "price": 500,
+    "seats": 2
+  },
+  {
+    "id": "BK5684",
+    "c_name": "vcvwe",
+    "movie": "The Shawshank Redemption",
+    "audi": 2,
+    "show": "06:00 PM to 09:00 PM",
+    "price": 220,
+    "seats": 1
   }
 ]
